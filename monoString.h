@@ -89,16 +89,16 @@ monoString *CreateIl2CppString(std::string str) {
     return CreateIl2CppString(str.c_str());
 }
 
-monoString *CreateMonoString(const char *str) { //private unsafe string CreateString(sbyte* value)
-#ifdef __arm__ //armeabi-v7a
+monoString *CreateMonoString(const char *str) { // private unsafe string CreateString(sbyte* value)
+#ifdef __arm__ // armeabi-v7a
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString *(*)(void *,
                                                                                            const char *)) getAbsoluteAddress(
             libName, 0x0);
-#elif defined(__i386__) //x86
+#elif defined(__i386__) // x86
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString *(*)(void *,
                                                                                            const char *)) getAbsoluteAddress(
             libName, 0x0);
-#elif defined(__aarch64__) //arm64-v8a
+#elif defined(__aarch64__) // arm64-v8a
     monoString *(*String_CreateString)(void *instance, const char *str) = (monoString *(*)(void *, const char *)) getAbsoluteAddress(libName, 0x0);
 #endif
     return String_CreateString(NULL, str);
