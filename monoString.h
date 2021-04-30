@@ -18,7 +18,7 @@ typedef struct _monoString {
     void *klass;
     void *monitor;
     int length;
-    char chars[0];
+    char chars[32];
 
     std::string get_string() {
         std::u16string u16_string(reinterpret_cast<const char16_t *>(getChars()));
