@@ -10,7 +10,8 @@
 #define ALLOC_PTRFREE(obj, vt, size) do { (obj) = (_monoString*)malloc ((size)); (obj)->klass = (vt); (obj)->monitor = NULL;} while (0)
 
 struct _monoString;
-typedef struct Il2CppDefaults_str{Il2CppImage *corlib;
+typedef struct Il2CppDefaults_str{
+    void *corlib;
     void *object_class;
     void *byte_class;
     void *void_class;
