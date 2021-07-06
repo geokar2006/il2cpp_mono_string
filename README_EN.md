@@ -11,8 +11,8 @@ std::string str = "string";
 monoString *from_string = monoString::New(str);
 monoString *just_create = new monoString();
 just_create->create("Any text");
-monoString *il2cpp_method = CreateIl2CppString("Through il2ccp_string_new"); // const char * and std::string
-monoString *mono_method = CreateMonoString("Through CreateString"); // Need offsets, const char * and std::string
+monoString *il2cpp_method = CreateMonoString("Through il2ccp_string_new"); // const char * and std::string
+monoString *mono_method = CreateMonoString("Through CreateString", false); // Need offsets, const char * and std::string // false - mono method
 //Output
 LOGI("const char*: %s", from_const_char->get_const_char());
 LOGI("std::string: %s", from_string->get_string().c_str());

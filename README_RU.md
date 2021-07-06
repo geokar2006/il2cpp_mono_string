@@ -11,8 +11,8 @@ std::string str = "string";
 monoString *from_string = monoString::New(str);
 monoString *just_create = new monoString();
 just_create->create("Любой текст");
-monoString *il2cpp_method = CreateIl2CppString("С Помощью il2ccp_string_new"); // const char * и std::string
-monoString *mono_method = CreateMonoString("С Помощью CreateString"); // Нужны оффсеты, const char * и std::string
+monoString *il2cpp_method = CreateMonoString("С Помощью il2ccp_string_new"); // const char * и std::string
+monoString *mono_method = CreateMonoString("С Помощью CreateString", false); // Нужны оффсеты, const char * и std::string // false - mono метод
 //Вывод
 LOGI("const char*: %s", from_const_char->get_const_char());
 LOGI("std::string: %s", from_string->get_string().c_str());
